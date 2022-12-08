@@ -1,0 +1,11 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "description": "Basic file manager",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "vanc4a",
+  "license": "ISC"
+}
