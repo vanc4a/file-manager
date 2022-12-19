@@ -24,6 +24,29 @@ exports.fileList = () => {
 }
 
 exports.cd = (path) => {
-    let arr = path.split(' ')
-    fm.pathNavigation(arr[1])
+    fm.pathNavigation(path)
+}
+
+exports.cat = (filename) => {
+    fm.readFile(filename)
+}
+
+exports.rm = (filename) => {
+    fm.removeFile(filename)
+}
+
+exports.rn = (current,target) => {
+    fm.renameFile(current,target)
+}
+
+exports.add = (filename) => {
+    fm.addFile(filename)
+}
+
+exports.cp = (current,target) => {
+    fm.copyFile(current,target)
+}
+
+exports.mv = (current,target) => {
+    fm.moveFile(current,target)
 }

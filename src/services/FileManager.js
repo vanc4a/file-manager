@@ -30,6 +30,7 @@ module.exports = class FileMager {
     }
 
     pathNavigation(targetPath) {
+        console.log(targetPath)
         this.currentDir = path.resolve(this.currentDir,targetPath)
     }
     
@@ -50,12 +51,12 @@ module.exports = class FileMager {
     }
     
     copyFile(current,target) {
-        return createReadStream(`${this.currentDir}/${current}`,{encoding: 'utf-8'})
+        return createReadStream(`${this.currentDir}/${current}`, {encoding: 'utf-8'})
             .pipe(createWriteStream(`${this.currentDir}/${target}`))
     }
     
     moveFile(current,target) {
-        this.copyFile(curent,target);
-        this.removeFile(current);
+        this.copyFile(`${this.currentDir}/${current}`,`${this.currentDir}/${target}`);
+        this.removeFile(`${this.currentDir}/${current}`);
     }
 }
